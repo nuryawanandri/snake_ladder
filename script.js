@@ -208,12 +208,21 @@ function setEffect () {
 }
 
 function checkEffect (pos) {
-  var effectElem = document.getElementById(`effect-${pos}`)
-  if (effectElem.getAttribute('data-effect')) {
-    return parseInt(effectElem.getAttribute('data-effect'))
-  } else {
-    return parseInt(pos)
+  var pos = pos
+  var getEffect = true
+  while (getEffect) {
+    var effectElem = document.getElementById(`effect-${pos}`)
+    if (effectElem.getAttribute('data-effect')) {
+      pos = parseInt(effectElem.getAttribute('data-effect'))
+      getEffect = true
+      // return parseInt(effectElem.getAttribute('data-effect'))
+    } else {
+      getEffect = false
+      // return parseInt(pos)
+    }
   }
+  return pos
+  
 }
 
 function movePlayer (prevPos1, prevPos2, currentPos, playerTurn) {
@@ -296,7 +305,5 @@ function getCoordinate (input) {
   if (!overlap) {
     effect.push({ effect: input[2], top: top, bottom: bottom })
   }
-  console.log('input : ', effect)
-  console.log('overlap : ', overlap)
   return overlap
 }
