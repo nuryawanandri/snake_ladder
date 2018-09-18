@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Snake And Ladder</title>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  .box {
+    font-size: 20px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    border-color: black;
+    background: white;
+    color: black;
+    margin: 0 0px;
+    position: relative;
+    justify-content: space-around;
+  }
+  .number {
+    font-size: 15px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+  }
+  .effect {
+    font-size: 20px;
+    position: absolute;
+    bottom: 3px;
+    align-content: center;
+  }
+  .playerBox {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 5px;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 10px;
+    line-height: 25px;
+    /* box-shadow: 0 2px 5px rgba(0,0,0, .56) */
+  }
+  .playerBox.p1 {
+    background: red;
+    border: none;
+  }
+  .playerBox.p2 {
+    background: blue;
+    border: none;
+  }
+</style>
+<body>
+  <h1>Snake and Ladder</h1>
+  <br>
+  <table id='board'>
+  </table>
+  <br>
+  <button onclick="setEffect()" id='setEffect' >Set Ular/Tangga</button>
+  <br>
+  <button onclick="startGame()" id='startGameButton'>Start Game</button>
+  <button onclick="diceRollResult(0)" id='dice' style="display:none">Dice Roll : </button>
+  <div id='cheat'>
+
+  </div>
+  <br>
+  <span id='dice-result'>0</span>
+</body>
+<script src="script.js"></script>
+</html>
